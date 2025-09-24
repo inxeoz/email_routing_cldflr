@@ -1,0 +1,7 @@
+name = "email-routing-worker"
+main = "index.js"
+compatibility_date = "2023-09-01"
+
+kv_namespaces = [
+  { binding = "email_routing", id = "4dac596341074de7981b950489f88eaa" }
+]
