@@ -1,13 +1,14 @@
 export default {
+  async fetch(request, env, ctx) {
+    return new Response("Email worker is running ✅", { status: 200 });
+  },
+
   async email(message, env, ctx) {
     try {
-      // Normalize recipient address
       const recipient = message.to.toLowerCase();
 
-      // Look up forwarding target in KV
       let forwardTo = await env.email_routing.get(recipient);
 
-      // Fallback to default if no match
       if (!forwardTo) {
         forwardTo = await env.email_routing.get("default");
       }
