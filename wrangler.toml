@@ -1,4 +1,5 @@
-name = "email-routing-worker"
+# wrangler.toml
+name = 'emailroutingworker'
 main = "index.js"
 compatibility_date = "2023-09-01"
 
